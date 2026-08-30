@@ -1,95 +1,116 @@
-Project Management Platform (PERN Stack)
+<div align="center">
 
-A modern Project Management Platform built with the PERN Stack (PostgreSQL, Express.js, React.js, Node.js). The application helps organizations efficiently manage projects, tasks, and team collaboration with secure authentication and automated email notifications.
+# Project Management Platform
 
-Features
 
-- 🔐 Secure authentication using Clerk
-- 🏢 Create and manage multiple organizations
-- 👥 Invite and manage team members
-- 📁 Create and organize multiple projects
-- ✅ Create, assign, update, and track tasks
-- 📧 Automatic email notifications when tasks are assigned
-- ⏰ Due date reminder emails
-- ⚡ Background job processing with Inngest
-- 🗄️ PostgreSQL database hosted on Neon
-- 📱 Responsive and user-friendly interface
-- ☁️ Deployed on Vercel
+Built with the **PERN Stack** — PostgreSQL, Express.js, React.js & Node.js.
 
-Tech Stack
+Manage organizations, projects, tasks, and team collaboration from one place.
 
-Frontend
+<br/>
 
-- React.js
-- JavaScript
-- CSS
+![React](https://img.shields.io/badge/React.js-2026-blue?style=for-the-badge&logo=react&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-20+-green?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-Backend-black?style=for-the-badge&logo=express&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue?style=for-the-badge&logo=postgresql&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white)
 
-Backend
+</div>
 
-- Node.js
-- Express.js
+---
 
-Database
+## About The Project
 
-- PostgreSQL (Neon)
+**Project Management Platform** is a modern full-stack application designed to help organizations manage their **projects, tasks, and team collaboration** efficiently.
 
-Authentication
+The platform provides secure authentication, organization management, task assignment, automated email notifications, due-date reminders, and background job processing.
 
-- Clerk
+---
 
-Background Jobs
+## Features
 
-- Inngest
+### Authentication & Organizations
+- Secure authentication using **Clerk**
+- Create and manage multiple organizations
+- Invite team members
+- Organization-based access control
 
-Deployment
+### Project Management
+- Create multiple projects
+- Organize projects within organizations
+- Manage project-related tasks
 
-- Vercel
+### Task Management
+- Create tasks
+- Assign tasks to team members
+- Update task status
+- Track task progress
+- Manage task due dates
 
-How It Works
+### Email Notifications
+- Automatic email when a task is assigned
+- Due-date reminder emails
+- Automated notification workflow
 
-1. Users sign in securely using Clerk.
-2. Create one or more organizations.
-3. Invite team members to collaborate.
-4. Create projects within an organization.
-5. Add and assign tasks to team members.
-6. Assigned members receive email notifications.
-7. Reminder emails are automatically sent on task due dates.
+### Background Jobs
+- Background job processing using **Inngest**
+- Automated task reminder processing
+- Event-driven workflows
 
-Learning Outcomes
+### User Experience
+- Responsive design
+- Clean and user-friendly interface
+- Works across desktop and mobile devices
 
-Through this project, I gained hands-on experience with:
+### Deployment
+- Frontend and backend deployed using **Vercel**
+- PostgreSQL database hosted on **Neon**
 
-- Building a complete PERN Stack application
-- REST API development
-- PostgreSQL database design
-- Authentication and authorization using Clerk
-- Background job processing with Inngest
-- Email notification systems
-- Full-stack deployment using Vercel
-- Project structure and scalable application development
+---
 
-Future Improvements
+## Tech Stack
 
-- Dashboard analytics
-- File attachments
-- Comments on tasks
-- Real-time notifications
-- Activity logs
-- Dark mode
-- Advanced filtering and search
+| Category | Technologies |
+|----------|--------------|
+| Frontend | React.js, JavaScript, CSS |
+| Backend | Node.js, Express.js |
+| Database | PostgreSQL, Neon |
+| Authentication | Clerk |
+| Background Jobs | Inngest |
+| Email | Email Notification System |
+| Deployment | Vercel |
 
-Installation
+---
 
-git clone <repository-url>
+## Application Architecture
 
-cd project-management-main
-
-npm install
-
-Configure your environment variables and start both frontend and backend.
-
-Author
-
-Kiran S B
-
-If you found this project helpful, consider giving it a ⭐ on GitHub.
+```text
+                    ┌─────────────────────┐
+                    │       User          │
+                    └──────────┬──────────┘
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │    React.js UI      │
+                    │     Frontend        │
+                    └──────────┬──────────┘
+                               │
+                         REST API
+                               │
+                               ▼
+                    ┌─────────────────────┐
+                    │   Express.js API    │
+                    │      Backend        │
+                    └──────┬───────┬──────┘
+                           │       │
+              ┌────────────┘       └─────────────┐
+              ▼                                  ▼
+     ┌─────────────────┐                ┌─────────────────┐
+     │   PostgreSQL    │                │     Inngest     │
+     │      Neon       │                │ Background Jobs │
+     └─────────────────┘                └────────┬────────┘
+                                                  │
+                                                  ▼
+                                       ┌──────────────────┐
+                                       │ Email Notification│
+                                       └──────────────────┘
